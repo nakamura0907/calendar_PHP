@@ -1,6 +1,5 @@
 <?php
 
-
   if (isset($_GET['ym'])){
     $ym = $_GET['ym'];
   } else {
@@ -27,6 +26,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -35,10 +35,11 @@
     <h1 class="header__title">Calendar</h1>
 
     <nav class="header__nav">
-      <ul class="header__list list l-flex">
+      <ul class="header__list list" id="navigation">
         <li class="list__item"><a href="https://github.com/nakamura0907" target="_blank">nakamura0907</a></li>
         <li class="list__item"><a href="https://github.com/reonroen" target="_blank">reonroen</a></li>
       </ul>
+      <i class="header__hamburger fas fa-bars" id="hamburger"></i>
     </nav>
 
   </header>
@@ -62,20 +63,20 @@
       </tr>
       <tr>
         <?php
-          for($i=0;$i<$fDate;$i++){
+          for ($i=0; $i<$fDate; $i++) {
             echo "<td></td>";
           }
-          for($i=1;$i<=$lDay;$i++){
-            if($fDate==0&&$i%7==1){
+          for ($i=1; $i<=$lDay; $i++) {
+            if (($fDate == 0) && ($i % 7 == 1)) {
               echo "</tr><tr>";
             }
-            if($fDate==1&&$i%7==0){
+            if (($fDate == 1) && ($i % 7 == 0)) {
               echo "</tr><tr>";
             }
-            if($i%7==8-$fDate){
+            if ($i % 7 == 8 - $fDate ) {
               echo "</tr><tr>";
             }
-            echo "<td>".$i."</td>";
+            echo "<td>" . $i . "</td>";
           }
         ?>
       </tr>
@@ -86,5 +87,7 @@
   <footer class="footer">
     <small class="footer__copyright">&copy; Copyright 2020 Calendar. All rights reserved.</small>
   </footer>
+
+<script src="./js/script.js"></script>
 </body>
 </html>
