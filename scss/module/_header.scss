@@ -1,6 +1,10 @@
 .header {
   &__title {
     margin: 0;
+
+    a {
+      color: black;
+    }
   }
 
   &__list {

@@ -4,6 +4,8 @@
 
 ## Demo
 
+![Demo](https://raw.github.com/wiki/nakamura0907/calendar_PHP/images/demo.gif)
+
 ## Contributors
 
 - [nakamura0907](https://github.com/nakamura0907)
@@ -13,6 +15,6 @@
 
 - ~カレンダーデザイン~
 - README.md
-  - GIF
+  - ~GIF~
 - テストの作成
 - リファクタリング
