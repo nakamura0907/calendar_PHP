@@ -1,0 +1,16 @@
+table {
+  margin: 0 auto;
+}
+
+td {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  td {
+    height: 50px;
+    width: 50px;
+  }
+}

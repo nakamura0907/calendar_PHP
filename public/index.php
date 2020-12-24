@@ -32,8 +32,21 @@
 
 
   <main class="main">
-    <h2 class="main__title"><?php echo $nowMonth; ?>年<?php echo $nowDay; ?>月</h2>
+    <div class="main__container l-flex l-around">
+      <a href="?id=10">&lt;&lt;</a>
+      <h2 class="main__title"><?php echo $nowMonth; ?>年<?php echo $nowDay; ?>月</h2>
+      <a href="?id=12">&gt;&gt;</a>
+    </div>
     <table class="table">
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
       <tr>
         <?php
           for($i=0;$i<$fDate;$i++){
