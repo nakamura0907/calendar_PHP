@@ -15,6 +15,7 @@
   $nowMonth=date('m',strtotime(($ym)));
   $lDay=date('d',strtotime('last day of '.$ym));
   $fDate=date('w',strtotime('first day of '.$ym));
+  $lDate=date('w',strtotime('last day of'.$ym));
 
   $prev = date('Y-m', strtotime('-1 month', $timestamp));
   $next = date('Y-m', strtotime('+1 month', $timestamp));
@@ -77,6 +78,9 @@
               echo "</tr><tr>";
             }
             echo "<td>" . $i . "</td>";
+          }
+          for($i=0;$i<6-$lDate;$i++){
+            echo "<td></td>";
           }
         ?>
       </tr>
