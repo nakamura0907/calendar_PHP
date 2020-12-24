@@ -1,0 +1,11 @@
+.header {
+  &__title {
+    margin: 0;
+  }
+
+  &__list {
+    li:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
