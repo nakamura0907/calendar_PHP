@@ -1,11 +1,23 @@
 <?php
 
-  $month = 1;
-  $lDay = date('d', strtotime('last day of this month'));
-  $fDate = date('w', strtotime('first day of this month'));
+  if (isset($_GET['ym'])){
+    $ym = $_GET['ym'];
+  } else {
+    $ym = date('Y-m');
+  }
+  $timestamp = strtotime($ym . '-01');
+    if($timestamp === false){
+      $ym = date('Y-m');
+      $timestamp = strtotime($ym . '-01');
+  }
 
-  $nowMonth = date('Y');
-  $nowDay = date('m');
+  $nowYear=date('Y',strtotime($ym));
+  $nowMonth=date('m',strtotime(($ym)));
+  $lDay=date('d',strtotime('last day of '.$ym));
+  $fDate=date('w',strtotime('first day of '.$ym));
+
+  $prev = date('Y-m', strtotime('-1 month', $timestamp));
+  $next = date('Y-m', strtotime('+1 month', $timestamp));
 
 ?>
 <!DOCTYPE html>
@@ -35,9 +47,9 @@
 
   <main class="main">
     <div class="main__container l-flex l-around">
-      <a href="index.php?id=10">&lt;&lt;</a>
-      <h2 class="main__title"><?php echo $nowMonth; ?>年<?php echo $nowDay; ?>月</h2>
-      <a href="index.php?id=12">&gt;&gt;</a>
+      <a href="?ym=<?php echo $prev; ?>">&lt;&lt;</a>
+      <h2 class="main__title"><?php echo $nowYear; ?>年<?php echo $nowMonth; ?>月</h2>
+      <a href="?ym=<?php echo $next; ?>">&gt;&gt;</a>
     </div>
     <table class="table">
       <tr>
