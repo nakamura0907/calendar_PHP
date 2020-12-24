@@ -11,11 +11,11 @@
       $timestamp = strtotime($ym . '-01');
   }
 
-  $nowYear=date('Y',strtotime($ym));
-  $nowMonth=date('m',strtotime(($ym)));
-  $lDay=date('d',strtotime('last day of '.$ym));
-  $fDate=date('w',strtotime('first day of '.$ym));
-  $lDate=date('w',strtotime('last day of'.$ym));
+  $nowYear = date('Y', strtotime($ym));
+  $nowMonth = date('m', strtotime(($ym)));
+  $lDay = date('d', strtotime('last day of '.$ym));
+  $fDate = date('w', strtotime('first day of '.$ym));
+  $lDate = date('w', strtotime('last day of'.$ym));
 
   $prev = date('Y-m', strtotime('-1 month', $timestamp));
   $next = date('Y-m', strtotime('+1 month', $timestamp));
@@ -33,7 +33,7 @@
 <body>
   <header class="header l-flex l-around">
 
-    <h1 class="header__title">Calendar</h1>
+    <h1 class="header__title"><a href="index.php">Calendar</a></h1>
 
     <nav class="header__nav">
       <ul class="header__list list" id="navigation">
@@ -79,7 +79,7 @@
             }
             echo "<td>" . $i . "</td>";
           }
-          for($i=0;$i<6-$lDate;$i++){
+          for ($i=0; $i<6-$lDate; $i++) {
             echo "<td></td>";
           }
         ?>
