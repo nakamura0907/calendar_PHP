@@ -4,6 +4,9 @@
   $lDay=date('d',strtotime('last day of this month'));
   $fDate=date('w',strtotime('first day of this month'));
 
+  $nowMonth=date('Y');
+  $nowDay=date('m');
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -29,7 +32,7 @@
 
 
   <main class="main">
-    <h2 class="main__title">YYYY年MM月</h2>
+    <h2 class="main__title"><?php echo $nowMonth; ?>年<?php echo $nowDay; ?>月</h2>
     <table class="table">
       <tr>
         <?php
