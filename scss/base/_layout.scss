@@ -1,0 +1,31 @@
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+header.header {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 19px 12px;
+}
+
+main.main {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin: 0 32px;
+}
+
+footer.footer {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  padding: 19px 12px 0px 12px;
+}
+
+@media (min-width: 720px) {
+  main.main {
+    width: 620px;
+    margin: 0 auto;
+  }
+}
